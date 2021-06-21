@@ -102,12 +102,12 @@ client.connect(err => {
     })
   })
 
-   app.get('/candidateListByEmail',(req,res) => {
-    candidateCollection.find({email:req.query.email})
-    .toArray((err, documents) => {
-      res.send(documents);
-    })
-  })
+  //  app.get('/candidateListByEmail',(req,res) => {
+  //   candidateCollection.find({email:req.query.email})
+  //   .toArray((err, documents) => {
+  //     res.send(documents);
+  //   })
+  // })
 
 
   app.patch('/update/:id',(req,res) => {
