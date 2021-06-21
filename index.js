@@ -87,6 +87,14 @@ client.connect(err => {
     })
   })
 
+   app.get('/jobsFilter',(req,res) => {
+    const search = req.query.search;
+    jobCollection.find({title: {$regex: search}})
+    .toArray((err, documents) => {
+      res.send(documents);
+    })
+  })
+
   app.get('/candidate',(req,res) => {
     candidateCollection.find({})
     .toArray((err, documents) => {
